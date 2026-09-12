@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artemis Forecasting — Public Snapshot — Charlie Clarke</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16233A; --paper:#ECEEEA; --paper-raised:#F7F8F5;
+    --steel:#4C5A6B; --line:#C7CCC6; --draft:#A97B22; --valid:#3C6B4E;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'IBM Plex Sans',sans-serif;line-height:1.55;}
+  .wrap{max-width:820px;margin:0 auto;padding:0 28px;}
+  header{border-bottom:1px solid var(--line);padding:50px 0 38px;}
+  .eyebrow,.label,th{font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.1em;}
+  .eyebrow{font-size:12px;color:var(--steel);margin:0 0 18px;}
+  h1,h2{font-family:'Fraunces',serif;font-weight:500;}
+  h1{font-size:clamp(34px,6vw,52px);line-height:1.05;margin:0 0 16px;letter-spacing:-.01em;}
+  .lede{font-size:17px;color:var(--steel);max-width:62ch;margin:0 0 24px;}
+  .back,.actions a{color:var(--ink);font-family:'IBM Plex Mono',monospace;font-size:13px;text-decoration:none;border-bottom:1px solid var(--ink);}
+  .back:hover,.actions a:hover{color:#3E5A78;border-color:#3E5A78;}
+  main{padding:34px 0 76px;}
+  .notice{border-left:3px solid var(--draft);background:var(--paper-raised);padding:18px 20px;margin-bottom:28px;}
+  .notice strong{display:block;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--draft);margin-bottom:6px;}
+  .notice p{margin:0;max-width:68ch;}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 38px;}
+  .card{background:var(--paper-raised);border:1px solid var(--line);padding:18px 16px;}
+  .label{font-size:10px;color:var(--steel);margin-bottom:8px;}
+  .value{font-family:'Fraunces',serif;font-size:25px;line-height:1.1;margin-bottom:6px;}
+  .detail{font-size:13px;color:var(--steel);}
+  h2{font-size:27px;line-height:1.2;margin:38px 0 12px;}
+  p{max-width:68ch;}
+  table{border-collapse:collapse;width:100%;font-size:14px;margin:10px 0 8px;}
+  th{text-align:left;font-size:10px;color:var(--steel);border-bottom:1px solid var(--ink);padding:0 14px 9px 0;}
+  td{border-bottom:1px solid var(--line);padding:14px 14px 14px 0;vertical-align:top;}
+  .prob{font-family:'IBM Plex Mono',monospace;color:var(--ink);white-space:nowrap;}
+  .status{color:var(--draft);font-family:'IBM Plex Mono',monospace;font-size:11px;white-space:nowrap;}
+  .method{border-top:1px solid var(--line);margin-top:36px;padding-top:22px;color:var(--steel);font-size:13.5px;}
+  .actions{display:flex;gap:24px;flex-wrap:wrap;margin-top:20px;}
+  .actions a.primary{background:var(--ink);color:var(--paper-raised);border:1px solid var(--ink);padding:9px 13px;}
+  .actions a.primary:hover{background:#3E5A78;color:var(--paper-raised);}
+  footer{border-top:1px solid var(--line);padding:28px 0 56px;color:var(--steel);font-size:13px;}
+  @media(max-width:620px){.cards{grid-template-columns:1fr;}.wrap{padding:0 20px;}header{padding-top:38px;}table,thead,tbody,th,td,tr{display:block;}th{display:none;}td{border:0;padding:4px 0;}tr{border-bottom:1px solid var(--line);padding:10px 0 14px;}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="eyebrow">Artemis Forecasting — public snapshot / demo</p>
+      <h1>Report-aligned forecasts, made reviewable.</h1>
+      <p class="lede">A static view of the workflow behind Artemis: turning explicitly marked “Forecast watch” statements in a published report into deterministic, provenance-aware draft predictions.</p>
+      <a class="back" href="index.html">← Back to case files</a>
+    </header>
+
+    <main>
+      <aside class="notice">
+        <strong>Important status note</strong>
+        <p>This is a public snapshot/demo, not a live dashboard. Artemis runs locally with Python and SQLite; the rows below are illustrative draft records and do not represent resolved performance data.</p>
+      </aside>
+
+      <section class="cards" aria-label="Snapshot summary">
+        <div class="card"><div class="label">Record state</div><div class="value">Draft only</div><div class="detail">Human approval is required before promotion.</div></div>
+        <div class="card"><div class="label">Scoring status</div><div class="value">Excluded</div><div class="detail">No Brier, calibration, or win-rate result is claimed.</div></div>
+        <div class="card"><div class="label">Provenance</div><div class="value">Captured</div><div class="detail">Snapshot, source, assumptions, and generator metadata are retained locally.</div></div>
+      </section>
+
+      <h2>Illustrative draft forecasts</h2>
+      <p>These rows show the shape of records generated when a report contains an explicit forecast watch. The importer uses the midpoint of the published range for a deterministic draft; it does not turn general commentary into a prediction.</p>
+      <table>
+        <thead><tr><th>Forecast watch</th><th>Draft probability</th><th>Horizon</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Forecast watch: a select committee session revisits the programme</td><td class="prob">75% midpoint</td><td>Within 6 months</td><td class="status">UNAPPROVED DRAFT</td></tr>
+          <tr><td>Forecast watch: declared Initial Operational Capability is reached</td><td class="prob">50% midpoint</td><td>By end of 2026</td><td class="status">UNAPPROVED DRAFT</td></tr>
+          <tr><td>Forecast watch: a positive capability story runs independently of an MoD announcement</td><td class="prob">30% midpoint</td><td>Within 6 months</td><td class="status">UNAPPROVED DRAFT</td></tr>
+        </tbody>
+      </table>
+
+      <h2>What Artemis records</h2>
+      <p>Each report import stores a SHA-256 report snapshot, source URL, title and date, retrieval time, generator version, and assumptions. Re-importing an identical report is idempotent. Drafts live separately from approved forecasts so the analytics layer remains honest.</p>
+      <div class="method">
+        <strong>Drafts are excluded from</strong> Brier scores, calibration analysis, win rate, leaderboard rankings, and Good Judgment Open comparisons until a human review workflow promotes them. Validated or human-entered forecasts are the only records that can contribute to those measures.
+        <div class="actions">
+          <a class="primary" href="https://github.com/CharlieClarke787/artemis-forecasting" target="_blank" rel="noopener" aria-label="Open the Artemis Forecasting public repository on GitHub">Run the local app →</a>
+          <a href="https://github.com/CharlieClarke787/artemis-forecasting/blob/main/report_drafts.py" target="_blank" rel="noopener">Inspect the draft importer →</a>
+        </div>
+      </div>
+    </main>
+
+    <footer>© 2026 Charles Clarke. Public snapshot prepared for portfolio purposes; no live local database is exposed.</footer>
+  </div>
+</body>
+</html>
