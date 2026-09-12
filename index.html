@@ -157,6 +157,13 @@
     border-bottom:1px solid var(--ink);
   }
   .file-links a:hover{color:var(--risk-track); border-color:var(--risk-track);}
+  .file-links a.primary{
+    background:var(--ink);
+    color:var(--paper-raised);
+    padding:9px 13px;
+    border:1px solid var(--ink);
+  }
+  .file-links a.primary:hover{background:var(--risk-track); border-color:var(--risk-track); color:var(--paper-raised);}
   .file-links a.placeholder{
     color:var(--steel);
     border-bottom:1px dashed var(--line);
@@ -235,23 +242,23 @@
           <span class="tag track">Brier Score — Tracking</span>
         </div>
         <h2 class="file-title">Artemis Forecasting: A Personal Geopolitical &amp; Sanctions Forecasting System</h2>
-        <p class="file-summary">A self-built, full-stack forecasting application that logs geopolitical and sanctions-related predictions and scores them against reality — using Brier scoring, decile-based calibration analysis, and direct benchmarking against Good Judgment Open's community consensus.</p>
+        <p class="file-summary">A local Python/SQLite forecasting application for geopolitical and sanctions-related predictions, with dashboard and export views for reviewing forecasts and scores. Its deterministic, report-aligned draft prediction importer records provenance and supports idempotent re-runs; separate unapproved drafts remain excluded from analytics until approved. The workflow is covered by validation and automated tests, with Brier scoring, decile-based calibration analysis, and direct benchmarking against Good Judgment Open's community consensus.</p>
         <div class="meta-strip">
           <div class="meta-item">
             <div class="meta-label">Stack</div>
             <div class="meta-value">Python, SQLite, JS</div>
           </div>
           <div class="meta-item">
-            <div class="meta-label">Method</div>
-            <div class="meta-value">Brier scoring, calibration</div>
+            <div class="meta-label">Data workflow</div>
+            <div class="meta-value">Deterministic, provenance-aware drafts</div>
           </div>
           <div class="meta-item">
-            <div class="meta-label">Benchmark</div>
-            <div class="meta-value">Good Judgment Open</div>
+            <div class="meta-label">Validation</div>
+            <div class="meta-value">Automated tests and checks</div>
           </div>
         </div>
         <div class="file-links">
-          <a href="https://github.com/CharlieClarke787/artemis-forecasting" target="_blank" rel="noopener">View the repo →</a>
+          <a class="primary" href="https://github.com/CharlieClarke787/artemis-forecasting" target="_blank" rel="noopener" aria-label="Access the Artemis Forecasting public repository on GitHub">Access the public repository →</a>
           <a href="reports/artemis-forecasting-report.pdf" target="_blank" rel="noopener">Read the project report (PDF) →</a>
         </div>
       </article>
