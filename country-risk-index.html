@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forecast Watch — Composite Country Risk Index</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#16233A;--paper:#ECEEEA;--raised:#F7F8F5;--steel:#4C5A6B;--line:#C7CCC6;--high:#9C3B2E;--track:#3E5A78;}
+  *{box-sizing:border-box} body{margin:0;background:var(--paper);color:var(--ink);font-family:'IBM Plex Sans',sans-serif;line-height:1.55}
+  .wrap{max-width:820px;margin:0 auto;padding:0 28px} header{border-bottom:1px solid var(--line);padding:50px 0 38px}
+  .eyebrow,.label,th{font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.1em}
+  .eyebrow{font-size:12px;color:var(--steel);margin:0 0 18px} h1,h2{font-family:'Fraunces',serif;font-weight:500}
+  h1{font-size:clamp(34px,6vw,52px);line-height:1.05;margin:0 0 16px} h2{font-size:27px;line-height:1.2;margin:38px 0 12px}
+  .lede{font-size:17px;color:var(--steel);max-width:64ch;margin:0 0 24px}.back,.actions a{color:var(--ink);font-family:'IBM Plex Mono',monospace;font-size:13px;text-decoration:none;border-bottom:1px solid var(--ink)}
+  main{padding:34px 0 76px}.notice{border-left:3px solid var(--high);background:var(--raised);padding:18px 20px;margin-bottom:28px}.notice strong{display:block;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--high);margin-bottom:6px}.notice p{margin:0;max-width:68ch}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 38px}.card{background:var(--raised);border:1px solid var(--line);padding:18px 16px}.label{font-size:10px;color:var(--steel);margin-bottom:8px}.value{font-family:'Fraunces',serif;font-size:25px;line-height:1.1;margin-bottom:6px}.detail{font-size:13px;color:var(--steel)}
+  p{max-width:68ch} table{border-collapse:collapse;width:100%;font-size:14px;margin:10px 0 8px} th{text-align:left;font-size:10px;color:var(--steel);border-bottom:1px solid var(--ink);padding:0 14px 9px 0} td{border-bottom:1px solid var(--line);padding:14px 14px 14px 0;vertical-align:top}.score{font-family:'IBM Plex Mono',monospace;white-space:nowrap}.risk{color:var(--high);font-family:'IBM Plex Mono',monospace;font-size:11px;white-space:nowrap}
+  .method{border-top:1px solid var(--line);margin-top:36px;padding-top:22px;color:var(--steel);font-size:13.5px}.actions{display:flex;gap:24px;flex-wrap:wrap;margin-top:20px}.actions a.primary{background:var(--ink);color:var(--raised);border:1px solid var(--ink);padding:9px 13px}
+  footer{border-top:1px solid var(--line);padding:28px 0 56px;color:var(--steel);font-size:13px}
+  @media(max-width:620px){.cards{grid-template-columns:1fr}.wrap{padding:0 20px}header{padding-top:38px}table,thead,tbody,th,td,tr{display:block}th{display:none}td{border:0;padding:4px 0}tr{border-bottom:1px solid var(--line);padding:10px 0 14px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Forecast Watch / supporting evidence</p>
+    <h1>A composite country risk index, kept honest.</h1>
+    <p class="lede">A transparent screening companion to the country-risk work in Artemis Forecasting PR #2. It turns selected open indicators into a 0–100 risk score, then shows exactly where the snapshot is incomplete.</p>
+    <a class="back" href="index.html">← Back to case files</a>
+  </header>
+  <main>
+    <aside class="notice">
+      <strong>Read this before the number</strong>
+      <p>This is an ICRG/PRS-style structure, not licensed ICRG or PRS data. In the checked-in 2024 snapshot, IMF and World Bank WGI components could not be obtained and are marked missing. Each country's score therefore rests on the available Freedom House component alone; no missing value is imputed.</p>
+    </aside>
+    <section class="cards" aria-label="Index summary">
+      <div class="card"><div class="label">Snapshot</div><div class="value">2024</div><div class="detail">Latest available observations at or before the target year.</div></div>
+      <div class="card"><div class="label">Coverage</div><div class="value">4 countries</div><div class="detail">Russia, Iran, Venezuela, and Syria.</div></div>
+      <div class="card"><div class="label">Available data</div><div class="value">1 / 3</div><div class="detail">Freedom score available; WGI and IMF groups missing.</div></div>
+    </section>
+    <h2>What the snapshot says</h2>
+    <p>Scores run from 0 (lower observed risk) to 100 (higher observed risk). The four rows below are the actual committed outputs from the PR #2 snapshot. Because the two unavailable component groups are excluded and the remaining weight is renormalised, the composite equals the reversed Freedom House score in every row.</p>
+    <table>
+      <thead><tr><th>Country</th><th>Composite</th><th>Band</th><th>Available / missing</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Russia</strong><br><span class="detail">RUS</span></td><td class="score">88.00 / 100</td><td class="risk">VERY HIGH</td><td>Freedom House: 88.00<br>WGI: missing; IMF: missing</td></tr>
+        <tr><td><strong>Iran</strong><br><span class="detail">IRN</span></td><td class="score">89.00 / 100</td><td class="risk">VERY HIGH</td><td>Freedom House: 89.00<br>WGI: missing; IMF: missing</td></tr>
+        <tr><td><strong>Venezuela</strong><br><span class="detail">VEN</span></td><td class="score">87.00 / 100</td><td class="risk">VERY HIGH</td><td>Freedom House: 87.00<br>WGI: missing; IMF: missing</td></tr>
+        <tr><td><strong>Syria</strong><br><span class="detail">SYR</span></td><td class="score">95.00 / 100</td><td class="risk">VERY HIGH</td><td>Freedom House: 95.00<br>WGI: missing; IMF: missing</td></tr>
+      </tbody>
+    </table>
+    <p class="detail">The displayed score is not evidence that the countries are identical across governance, macroeconomics, or civic freedom. It is a faithful rendering of an incomplete, one-component snapshot.</p>
+    <h2>How the method is designed</h2>
+    <p>The design borrows the legible logic of commercial country-risk systems without claiming their data or calibration. Governance carries 50%, macroeconomics 25%, and civic freedom 25% when all groups are present. Missing groups are excluded and the available weights are renormalised.</p>
+    <table>
+      <thead><tr><th>Group</th><th>Open indicators</th><th>Transformation</th><th>Weight</th></tr></thead>
+      <tbody>
+        <tr><td>Governance</td><td>World Bank WGI: government effectiveness, political stability, rule of law, control of corruption</td><td>Each roughly −2.5 to +2.5 estimate mapped to 100–0 risk</td><td>50%</td></tr>
+        <tr><td>Macroeconomics</td><td>IMF DataMapper: real GDP growth and general government gross debt</td><td>Growth +10% to −10% mapped to 0–100; debt 0% to 150% mapped to 0–100; endpoints clamped</td><td>25%</td></tr>
+        <tr><td>Civic freedom</td><td>Freedom House aggregate total</td><td>Reversed to risk: 100 − freedom total</td><td>25%</td></tr>
+      </tbody>
+    </table>
+    <h2>What it can — and cannot — validate</h2>
+    <p>Use the index as a disciplined cross-check on a qualitative country judgment: does the direction look plausible, which component drives the disagreement, and what missing evidence should be collected next? It can challenge overconfident narrative, make assumptions explicit, and provide a repeatable baseline for later snapshots.</p>
+    <p>It cannot replace analyst judgment. The score does not model conflict exposure, sanctions, external financing, commodity concentration, exchange-rate stress, institutional nuance, or event timing. The weights and min/max mappings are policy choices, not empirically calibrated probabilities. WGI and Freedom House are perception and expert-coded measures with their own coverage and revisions. A “very high” band is a screening signal, not a forecast.</p>
+    <div class="method">
+      <strong>Provenance</strong><br>
+      Source code and the committed CSV, JSON, and source manifest are in <a href="https://github.com/CharlieClarke787/artemis-forecasting/tree/main/data/country-risk" target="_blank" rel="noopener">Artemis Forecasting</a>. The snapshot was generated for target year 2024; provider revisions may change a rerun. The repository records IMF 403 warnings and leaves the affected fields blank.
+      <div class="actions">
+        <a class="primary" href="reports/country-risk-index-companion.pdf" target="_blank" rel="noopener">Read the PDF version →</a>
+        <a href="https://github.com/CharlieClarke787/artemis-forecasting/blob/main/docs/country-risk-index.md" target="_blank" rel="noopener">Inspect the methodology →</a>
+      </div>
+    </div>
+  </main>
+  <footer>© 2026 Charles Clarke. Supporting evidence prepared independently for portfolio purposes.</footer>
+</div>
+</body>
+</html>
