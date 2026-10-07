@@ -1,12 +1,12 @@
 # PDF edit notes
 
-There are no Markdown, HTML, Word or LaTeX source files for these reports in the repository. The PDF files have not been changed. Apply the edits below to their source files, then regenerate the PDFs. Replace each existing PDF footer disclaimer, or add one if absent, with this exact text:
+There are no Markdown, HTML, Word or LaTeX source files for the reports in the repository. The Wedgetail PDF has been replaced using the updated Word document supplied separately; the remaining PDF files have not been changed. Apply the edits below to their source files, then regenerate those PDFs. Replace each existing PDF footer disclaimer, or add one if absent, with this exact text:
 
 > Independent analytical work prepared for portfolio purposes. Not for investment or policy use.
 
 Throughout the reports, replace em dashes in prose, titles and headings with suitable punctuation. Retain en dashes only in number and date ranges. The excerpts below identify the passages that need wording changes; do not alter facts, figures, probabilities, names, quotations or source lists. In the quoted excerpts, `[em dash]` denotes the punctuation mark to replace.
 
-Text extraction confirms that em dashes remain in these untouched PDFs: Artemis (6), AI (8), Iran (12), North Sea (15), SAF (41) and Wedgetail (20). The menthol and South Africa PDFs have none. Replace every occurrence, not only the examples below.
+Text extraction confirms that em dashes remain in these untouched PDFs: Artemis (6), AI (8), Iran (12), North Sea (15) and SAF (41). The menthol, South Africa and updated Wedgetail PDFs have none. Replace every occurrence, not only the examples below.
 
 ## `artemis-forecasting-report.pdf`
 
@@ -66,10 +66,3 @@ Text extraction confirms that em dashes remain in these untouched PDFs: Artemis 
 - The Q2 question currently reads “Q2. Will DfT amend the Mandate to permit a wider class of crop-based feedstocks into the Main Obligation”. It appears truncated. Check the source before publication; do not guess at the missing ending.
 - Replace “genuine delivery risk” with “delivery risk”. Replace the heading “POLICY LANDSCAPE” with “POLICY CONTEXT”.
 - Replace the report footer with the standard disclaimer above.
-
-## `wedgetail-government-affairs-briefing.pdf`
-
-- Replace “E-7 Wedgetail: Political and Reputational Risk, and the Case for Proactive Engagement” with “E-7 Wedgetail: Political and Reputational Risk”.
-- Replace “the programme has reached a genuinely positive moment” with “the programme has reached a positive point”.
-- In the same paragraph, replace the two parenthetical asides around “most likely a Public Accounts Committee or National Audit Office review once the aircraft is declared operational” with commas or separate sentences.
-- Replace the report footer with the standard disclaimer above. The unsolicited-writing-sample note on the HTML briefing page remains unchanged.
